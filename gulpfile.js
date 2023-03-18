@@ -62,7 +62,7 @@ function buildcopy() {
     'src/**/*.html',
   ], { base: 'src' })
 
-  .pipe(dest('dist'));
+  .pipe(dest('dist'))
 }
 
 function startWatch() {
@@ -72,16 +72,18 @@ function startWatch() {
   watch('src/images/src/**/*', images);
 }
 
-gulp.task('deploy', function () {
-  return gulp.src('./dist/**/*')
-    .pipe(deploy())
-});
+function pages() {
+  return src('./dist/**/*')
+
+  .pipe(deploy())
+}
 
 exports.browsersync = browsersync;
 exports.scripts = scripts;
 exports.styles = styles;
 exports.images = images;
 exports.cleanimg = cleanimg;
-exports.build = series(cleandist, styles, scripts, images, buildcopy);
+exports.pages = pages;
 
+exports.build = series(cleandist, styles, scripts, images, buildcopy);
 exports.default = parallel(scripts, styles, browsersync, startWatch);
