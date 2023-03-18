@@ -5,6 +5,7 @@ const sass = require('gulp-sass')(require('sass'));
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const del = require('del');
+const deploy = require('gulp-gh-pages');
 
 function browsersync() {
   browserSync.init({
@@ -70,6 +71,11 @@ function startWatch() {
   watch('src/**/*.html').on('change', browserSync.reload);
   watch('src/images/src/**/*', images);
 }
+
+gulp.task('deploy', function () {
+  return gulp.src('./dist/**/*')
+    .pipe(deploy())
+});
 
 exports.browsersync = browsersync;
 exports.scripts = scripts;
