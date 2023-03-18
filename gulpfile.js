@@ -5,6 +5,7 @@ const sass = require('gulp-sass')(require('sass'));
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const del = require('del');
+const ghPages = require('gulp-gh-pages');
 
 function browsersync() {
   browserSync.init({
@@ -64,6 +65,12 @@ function buildcopy() {
   .pipe(dest('dist'));
 }
 
+function pages() {
+  return src('./dist/**/*')
+
+  .pipe(ghPages())
+}
+
 function startWatch() {
   watch('src/styles/**/*', styles);
   watch(['src/**/*.js', '!src/**/*.min.js'], scripts);
@@ -76,6 +83,8 @@ exports.scripts = scripts;
 exports.styles = styles;
 exports.images = images;
 exports.cleanimg = cleanimg;
-exports.build = series(cleandist, styles, scripts, images, buildcopy);
 
+exports.pages = pages;
+
+exports.build = series(cleandist, styles, scripts, images, buildcopy);
 exports.default = parallel(scripts, styles, browsersync, startWatch);
