@@ -47,7 +47,7 @@ function images() {
 }
 
 function cleanimg() {
-  return del('src/images/dest/**/*', { force: true })
+  return del('src/images/src/**/*', { force: true })
 }
 
 function cleandist() {
