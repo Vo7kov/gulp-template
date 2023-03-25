@@ -12,13 +12,13 @@ function browsersync() {
   browserSync.init({
     server: { baseDir: 'src/' },
     notify: false,
-    online: false
+    online: false,
   });
 }
 
 function scripts() {
   return src([
-    'src/scripts/main.js'
+    'src/scripts/main.js',
   ])
 
   .pipe(concat('main.min.js'))
@@ -29,11 +29,12 @@ function scripts() {
 
 function styles() {
   return src([
-    'src/styles/main.scss'
+    'src/styles/main.scss',
   ])
 
   .pipe(sass())
   .pipe(concat('main.min.css'))
+  // eslint-disable-next-line max-len
   .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
   .pipe(dest('src/css/'))
 
