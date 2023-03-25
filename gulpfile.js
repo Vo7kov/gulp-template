@@ -2,6 +2,7 @@ const { src, dest, parallel, series, watch } = require('gulp');
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const del = require('del');
@@ -33,6 +34,7 @@ function styles() {
 
   .pipe(sass())
   .pipe(concat('main.min.css'))
+  .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
   .pipe(dest('src/css/'))
 
   .pipe(browserSync.stream())

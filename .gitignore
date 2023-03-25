@@ -11,3 +11,4 @@ node_modules
 # Generated files
 dist
 .cache
+.publish
