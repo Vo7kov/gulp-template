@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/eslint src/**/*.js && npx stylelint src/**/*.scss && npx linthtml src/**/*.html",
-    "deploy": "gulp build && gulp pages"
+    "deploy": "gulp build && gulp pages",
+    "optimize": "gulp images && gulp cleanimg"
   },
   "repository": {
     "type": "git",
