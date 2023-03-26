@@ -86,6 +86,7 @@ exports.scripts = scripts;
 exports.styles = styles;
 exports.images = images;
 exports.cleanimg = cleanimg;
+exports.cleandist = cleandist;
 
 exports.pages = pages;
 
