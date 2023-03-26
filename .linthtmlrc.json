@@ -10,8 +10,7 @@
 		"marginwidth",
 		"marginheight",
 		"scrolling",
-		"style",
-		"width"
+		"style"
 	],
 	"attr-name-ignore-regex": "viewBox",
   "attr-no-dup": true,
