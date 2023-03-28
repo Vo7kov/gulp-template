@@ -14,5 +14,5 @@ Its a simple gulp-template with:
 * **deploy** - deploy to gh-pages
 
 ## Important thing
-* For the html docs you need to use ```./images/your_folder/your_file``` to paste them
-* For the scss docs you need to use ```../images/your_folder/your_file```
+* For the html docs you need to use ```./images/dest/your_folder/your_file``` to paste them
+* For the scss docs you need to use ```../images/dest/your_folder/your_file```
