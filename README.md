@@ -1,4 +1,4 @@
-# Simple gulp template
+# Simple gulp template (requires node v. 14.18.0)
 Its a simple gulp-template with:
 * **.scss** 
 * **optimize images**
