@@ -1,13 +1,17 @@
 module.exports = {
   "env": {
-      "browser": true,
-      "commonjs": true,
-      "es2021": true,
+    "browser": true,
+    "commonjs": true,
+    "es2021": true,
   },
   "overrides": [
   ],
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
-      "ecmaVersion": "latest",
+    "ecmaVersion": 8,
+    "requireConfigFile": false,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true,
   },
   "rules": {
     "max-len": ["error", {

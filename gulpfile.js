@@ -60,7 +60,7 @@ function cleandist() {
 function buildcopy() {
   return src([
     'src/css/**/*.min.css',
-    'src/scripts/**/*.min.js',
+    'src/scripts/**/*.js',
     'src/images/dest/**/*',
     'src/**/*.html',
   ], { base: 'src' })

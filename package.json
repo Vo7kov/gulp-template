@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Vo7kov/gulp-template#readme",
   "devDependencies": {
     "@linthtml/linthtml": "^0.9.4",
+    "@babel/eslint-parser": "^7.5.4",
     "browser-sync": "^2.29.0",
     "del": "^6.0.0",
     "eslint": "^8.36.0",
